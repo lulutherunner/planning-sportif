@@ -7,50 +7,24 @@
     <title>Planning Sportif</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
+    
 </head>
 
 <body>
-    
-    <header>
-        <h1>🏋️‍♂️ Mon Planning Sportif</h1>
-        <div class="week-nav">
-            <button id="prevWeek">⬅️</button>
-            <div id="weekTitle">Semaine ...</div>
-            <button id="nextWeek">➡️</button>
-        </div>
-    </header>
-    
-    <main>
-    <div id="controls">
-        <select id="selectActivite">
-            <option>Footing</option>
-            <option>Sortie longue</option>
-            <option>Fractionné</option>
-            <option>Renfo court</option>
-            <option>Renfo long</option>
-            <option>Fullbody HYROX</option>
-        </select>
-        
-        <select id="selectJour">
-            <option>Lundi</option>
-            <option>Mardi</option>
-            <option>Mercredi</option>
-            <option>Jeudi</option>
-            <option>Vendredi</option>
-            <option>Samedi</option>
-            <option>Dimanche</option>
-        </select>
+    <h1>🏋️‍♂️ Mon Planning Sportif</h1>
+
+    <div id="semaine"></div>
+
+    <div id="controls" style="margin-bottom:10px;">
+        <select id="selectActivite"></select>
+        <select id="selectJour"></select>
         <button id="ajouterActivite">Ajouter une activité</button>
     </div>
-        
-    <div class="columns" id="semaine"></div>
-        
-    </main>
-    
+
     <script src="script.js"></script>
+
+
+
 </body>
 
-
 </html>
-
-

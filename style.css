@@ -1,350 +1,266 @@
-/* ----- Style général ----- */
+/* Variables pour un style iOS cohérent */
+:root {
+  --ios-blue: #007aff;
+  --ios-light-gray: #f0f0f7;
+  --ios-medium-gray: #d1d1d6;
+  --ios-dark-text: #1c1c1e;
+  --ios-light-text: #8e8e93;
+  --card-background: white;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Ombre plus douce */
+  --card-radius: 14px; /* Rayons plus prononcés */
+  --button-radius: 10px;
+  --input-radius: 10px;
+}
 
 body {
-
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   margin: 0;
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
-  background-color: #f6f6f6;
-
-  color: #222;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  height: 100vh;
-
-  overflow-x: hidden;
-
-}
-
-/* ----- Barre du haut (fixe, flottante avec blur) ----- */
-
-header {
-
-  position: fixed;
-
-  top: 0;
-
-  left: 0;
-
-  right: 0;
-
-  backdrop-filter: blur(15px);
-
-  -webkit-backdrop-filter: blur(15px);
-
-  background-color: rgba(255, 255, 255, 0.7);
-
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-
-  padding: 12px;
-
-  z-index: 1000;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-bottom: 1px solid rgba(255,255,255,0.4);
-
-}
-
-header h1 {
-
-  font-size: 1.5em;
-
-  margin: 0;
-
+  padding: 15px; /* Padding global augmenté pour l'esthétique */
+  background: var(--ios-light-gray);
+  color: var(--ios-dark-text);
   text-align: center;
+  -webkit-font-smoothing: antialiased; /* Rendu de police amélioré */
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  color: #000;
-
+h1 {
+  font-size: 28px; /* Taille de titre augmentée */
   font-weight: 700;
-
+  margin-bottom: 20px; /* Marge augmentée */
+  color: var(--ios-dark-text);
 }
 
-header .week-nav {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  width: 90%;
-
-  max-width: 400px;
-
-  margin-top: 8px;
-
-  font-weight: 600;
-
-  color: #222;
-
-}
-
-header .week-nav button {
-
-  background: none;
-
-  border: none;
-
-  font-size: 1.6em;
-
-  cursor: pointer;
-
-  color: #007aff;
-
-  transition: transform 0.1s ease;
-
-}
-
-header .week-nav button:active {
-
-  transform: scale(0.9);
-
-}
-
-/* ----- Contenu principal ----- */
-
-main {
-
-  margin-top: 120px; /* Espace sous la barre du haut */
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  width: 100%;
-
-  padding: 0 10px 60px 10px;
-
-  box-sizing: border-box;
-
-}
-
-/* ----- Zone de contrôle ----- */
-
+/* Conteneur des contrôles */
 #controls {
-
   display: flex;
-
   flex-wrap: wrap;
-
   justify-content: center;
-
   align-items: center;
-
-  gap: 8px;
-
-  margin-bottom: 15px;
-
+  gap: 10px; /* Espacement uniforme */
+  margin-bottom: 25px; /* Marge plus importante */
+  margin-top: 25px;
+  padding: 10px; /* Petit padding pour espacer du bord */
+  background: var(--card-background); /* Fond blanc pour le bloc de contrôles */
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
 }
 
-#controls select,
-
-#controls button {
-
-  font-size: 1em;
-
-  padding: 8px;
-
-  border-radius: 8px;
-
-  border: 1px solid #ccc;
-
-  background-color: #fff;
-
+#selectActivite, #selectJour {
+  flex: 1 1 calc(50% - 10px); /* Prend 50% de la largeur avec un petit espace */
+  padding: 12px 15px; /* Padding plus généreux */
+  border-radius: var(--input-radius);
+  border: 1px solid var(--ios-medium-gray);
+  font-size: 15px;
+  background-color: var(--card-background);
+  color: var(--ios-dark-text);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007aff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.6-6.4H19.6c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%204.6%201.7%208.5%205.2%2011.8L124.9%20224a17.9%2017.9%200%200%200%2013.6%206.4c4.6%200%208.5-1.7%2011.8-5.2L287.2%2094c3.5-3.3%205.2-7.2%205.2-11.8%200-4.6-1.7-8.5-5.2-11.8z%22%2F%3E%3C%2Fsvg%3E'); /* Flèche personnalisée */
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%;
+  background-size: 12px;
 }
 
-#controls button {
-
-  background-color: #007aff;
-
+#ajouterActivite {
+  flex: 1 1 100%; /* Prend toute la largeur sur mobile */
+  background: var(--ios-blue);
   color: white;
-
   border: none;
-
   cursor: pointer;
-
   font-weight: 600;
-
-  box-shadow: 0 2px 4px rgba(0,122,255,0.3);
-
-  transition: all 0.15s ease;
-
+  padding: 12px 20px;
+  border-radius: var(--button-radius);
+  font-size: 16px;
+  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out; /* Animation au survol */
 }
 
-#controls button:active {
-
-  transform: scale(0.96);
-
-  background-color: #0062d6;
-
+#ajouterActivite:hover {
+  background: #0060d0; /* Bleu plus foncé au survol */
+  transform: translateY(-1px); /* Léger effet de soulèvement */
+}
+#ajouterActivite:active {
+  transform: translateY(0); /* Effet d'enfoncement */
+  background: #004a9e;
 }
 
-/* ----- Grille des jours ----- */
-
-.columns {
-
-  display: grid;
-
-  grid-template-columns: repeat(7, 1fr);
-
-  gap: 6px;
-
-  width: 100%;
-
-  max-width: 700px;
-
-  box-sizing: border-box;
-
-}
-
-.colonne {
-
-  background: white;
-
-  border-radius: 14px;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-
-  padding: 8px;
-
+/* Conteneur principal de la semaine */
+#semaine {
   display: flex;
-
-  flex-direction: column;
-
+  flex-direction: column; 
   align-items: center;
-
-  min-height: 90px;
-
-  position: relative;
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-
+  gap: 15px; /* Espacement global plus grand */
+  padding-top: 15px;
 }
 
-.colonne:hover {
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-
+/* Header de navigation (flèches + titre) */
+#semaine > div:first-child { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%; 
+  max-width: 800px;
+  margin-bottom: 10px; /* Espacement avec la grille */
 }
+
+#semaine button {
+  background: none;
+  border: none;
+  color: var(--ios-blue);
+  font-weight: 600;
+  font-size: 20px; /* Icônes de flèche plus grandes */
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+#semaine button:hover {
+  opacity: 0.7;
+}
+
+#semaine h2 {
+  font-size: 22px; /* Taille du mois/année */
+  font-weight: 700;
+  color: var(--ios-dark-text);
+}
+
+/* Wrapper pour les 7 jours - CSS GRID pour la mosaïque */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 colonne par défaut sur mobile */
+  gap: 12px; /* Espace entre les cartes du jour */
+  width: 98%; 
+  max-width: 800px;
+  padding: 0;
+}
+
+/* Colonne de jour (La "carte" du jour) */
+.colonne {
+  background: var(--card-background);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 15px; /* Padding interne plus généreux */
+  min-height: 120px; /* Hauteur minimale pour l'esthétique */
+  display: flex;
+  flex-direction: column;
+  /* Pour permettre au contenu de défiler si trop d'activités */
+  max-height: 250px; /* Limite la hauteur d'une carte */
+  overflow-y: auto; /* Défilement si le contenu dépasse */
+  -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
+}
+.colonne::-webkit-scrollbar {
+  width: 4px; /* Largeur de la scrollbar */
+}
+.colonne::-webkit-scrollbar-thumb {
+  background-color: var(--ios-medium-gray);
+  border-radius: 2px;
+}
+.colonne::-webkit-scrollbar-track {
+  background-color: var(--ios-light-gray);
+}
+
 
 .colonne h3 {
-
-  margin: 4px 0;
-
-  font-size: 0.85em;
-
-  font-weight: 600;
-
-}
-
-/* ----- Post-it activités ----- */
-
-.postit {
-
-  margin-top: 6px;
-
-  padding: 6px;
-
-  border-radius: 6px;
-
-  color: white;
-
-  font-size: 0.8em;
-
   text-align: center;
+  border-bottom: 1px solid var(--ios-light-gray); /* Ligne plus claire */
+  padding-bottom: 8px; /* Plus d'espace sous le titre */
+  margin-bottom: 12px; /* Plus d'espace avant les activités */
+  font-size: 18px; /* Titre du jour plus grand */
+  font-weight: 600;
+  color: var(--ios-dark-text); /* Titre du jour plus visible */
+}
 
-  width: 100%;
-
+/* Contenu de l'activité (post-it) */
+.postit {
   position: relative;
-
-  box-sizing: border-box;
-
-}
-
-.postit .delete {
-
-  position: absolute;
-
-  top: -5px;
-
-  right: -5px;
-
-  background: rgba(0,0,0,0.7);
-
   color: white;
+  font-weight: 500;
+  border-radius: 9px; /* Bords du post-it plus arrondis */
+  padding: 10px 30px 10px 12px; /* Padding généreux */
+  margin: 6px 0; /* Marge entre les post-its */
+  cursor: grab;
+  font-size: 13px; /* Taille de police légèrement augmentée */
+  line-height: 1.4;
+  text-align: center;
+  min-height: 35px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Ombre légère sur les post-its */
+  transition: transform 0.1s ease-in-out;
+}
+.postit:hover {
+  transform: translateY(-2px); /* Effet au survol */
+}
 
+.postit .delete-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px; /* Marge à droite pour le bouton */
+  background: rgba(255,255,255,0.9); /* Fond presque blanc */
+  color: #e02f2f; /* Rouge pour la suppression */
+  border: none;
   border-radius: 50%;
-
-  width: 16px;
-
-  height: 16px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-size: 0.8em;
-
+  font-size: 14px; /* Bouton plus grand */
   cursor: pointer;
-
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out, background 0.2s ease-in-out;
 }
 
-/* ----- Responsive mobile ----- */
+.postit .delete-btn:hover {
+  background: white;
+  opacity: 1;
+  color: #cc0000;
+}
 
-@media (max-width: 600px) {
+/* MEDIA QUERIES pour la grille réactive */
 
-  header h1 {
-
-    font-size: 1.3em;
-
+/* Écrans de taille moyenne (ex: iPhone en paysage, petits iPad) */
+@media (min-width: 500px) {
+  .columns {
+      grid-template-columns: 1fr 1fr; /* Deux colonnes */
+      gap: 15px; /* Espace plus grand */
   }
+  #selectActivite, #selectJour {
+      max-width: none; /* Pas de max-width fixe ici */
+  }
+}
 
-  main {
-
-    margin-top: 110px;
-
+/* Grands écrans (tablettes et bureaux) */
+@media (min-width: 850px) {
+  #controls {
+      flex-wrap: nowrap; /* Ne plus envelopper sur grand écran */
+      gap: 15px;
+      padding: 15px 25px; /* Padding horizontal plus large */
+  }
+  #selectActivite, #selectJour {
+      flex: 1 1 auto; /* Reprend sa taille naturelle */
+      max-width: 200px; /* Une largeur max peut être utile */
+  }
+  #ajouterActivite {
+      flex: 0 0 auto; /* Ne prend pas toute la largeur */
+      width: auto;
   }
 
   .columns {
-
-    grid-template-columns: repeat(4, 1fr);
-
+      display: flex; /* Revenir à flexbox pour 7 colonnes */
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 0; /* Le gap sera géré par les marges des .colonne */
   }
-
   .colonne {
-
-    min-height: 85px;
-
+      width: calc(100% / 7 - 10px); /* 7 colonnes tiennent avec un peu d'espace */
+      margin: 0 5px; /* Marge horizontale entre les colonnes */
+      flex-shrink: 0;
+      padding: 12px;
+      min-height: 150px; /* Augmenter la hauteur min pour le bureau */
+      max-height: 400px; /* Plus de place sur le bureau */
   }
-
-}
-
-@media (max-width: 420px) {
-
-  .columns {
-
-    grid-template-columns: repeat(3, 1fr);
-
+  .colonne h3 {
+      font-size: 16px;
   }
-
 }
- 
