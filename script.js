@@ -199,6 +199,20 @@ function drop(e) {
 
 // ----- Swipe + flèches -----
 
+//let startX = 0, endX = 0;
+
+//semaineContainer.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+
+//semaineContainer.addEventListener('touchend', e => {
+
+//  endX = e.changedTouches[0].clientX;
+
+//  if (endX - startX > 50) changerSemaine(-1);
+
+//  else if (endX - startX < -50) changerSemaine(1);
+
+//});
+
 function changerSemaine(direction) {
 
   semaineActuelle += direction;
@@ -300,3 +314,4 @@ document.getElementById('ajouterActivite').addEventListener('click', () => {
 afficherSemaine(semaineActuelle);
 
  
+
