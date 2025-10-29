@@ -73,7 +73,7 @@ function afficherSemaine(semaine) {
     header.style.maxWidth = '1000px'; // limite la largeur du header pour le centrer visuellement
     const prev = document.createElement('button');
     prev.textContent = "⬅️";
-    prev.style.fontSize = '20px';
+    prev.style.fontSize = '40px';
     prev.onclick = () => changerSemaine(-1);
     const titreSemaine = document.createElement('div');
     titreSemaine.textContent = `Semaine ${semaine} – à partir du ${dateLundi}`;
@@ -81,7 +81,7 @@ function afficherSemaine(semaine) {
     titreSemaine.style.flex = '1';
     const next = document.createElement('button');
     next.textContent = "➡️";
-    next.style.fontSize = '20px';
+    next.style.fontSize = '40px';
     next.onclick = () => changerSemaine(1);
     header.appendChild(prev);
     header.appendChild(titreSemaine);
@@ -312,4 +312,5 @@ document.getElementById('ajouterActivite').addEventListener('click', () => {
 // ----- Initialisation -----
 
 afficherSemaine(semaineActuelle);
+
  
