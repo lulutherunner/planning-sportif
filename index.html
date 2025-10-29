@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Planning Sportif</title>
-  manifest.json
-  <link rel="stylesheet" href="eader>
-    <h1>🏋️‍♂️ Mon Planning Sportif</h1>
-    <div class="week-nav"></div>
-  </header>
-  <main>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning Sportif</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    
+    <header>
+        <h1>🏋️‍♂️ Mon Planning Sportif</h1>
+        <div class="week-nav">
+            <button id="prevWeek">⬅️</button>
+            <div id="weekTitle">Semaine ...</div>
+            <button id="nextWeek">➡️</button>
+        </div>
+    </header>
+    
+    <main>
     <div id="controls">
-      <select id="selectActivite"></select>
-      <select id="selectJour"></select>
-      <button id="ajouterActivite">Ajouter une activité</button>
+        <select id="activitySelect">
+            <option>Footing</option>
+            <option>Sortie longue</option>
+            <option>Fractionné</option>
+            <option>Renfo court</option>
+            <option>Renfo long</option>
+            <option>Fullbody HYROX</option>
+        </select>
+        
+        <select id="daySelect">
+            <option>Lundi</option>
+            <option>Mardi</option>
+            <option>Mercredi</option>
+            <option>Jeudi</option>
+            <option>Vendredi</option>
+            <option>Samedi</option>
+            <option>Dimanche</option>
+        </select>
+        <button id="addActivity">Ajouter une activité</button>
     </div>
-    <div id="semaine"></div>
-  </main>
-  script.js</script>
+        
+    <div class="columns" id="weekContainer"></div>
+        
+    </main>
+    
+    <script src="script.js"></script>
 </body>
+
+
 </html>
