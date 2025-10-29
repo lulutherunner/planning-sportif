@@ -1,0 +1,171 @@
+body {
+
+    font-family: Arial, sans-serif;
+    
+    margin: 0;
+  
+    padding: 20px;
+  
+    background: #f4f4f4;
+  
+    text-align: center;
+  
+  }
+  
+  h1 {
+  
+    margin-bottom: 15px;
+  
+  }
+  
+  #controls {
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+    gap: 10px;
+  
+    margin-bottom: 15px;
+
+    padding-top: 50px;
+  
+  }
+  
+  #selectActivite, #selectJour, #ajouterActivite {
+  
+    padding: 6px 10px;
+  
+    border-radius: 6px;
+  
+    border: 1px solid #ccc;
+  
+    font-size: 14px;
+  
+  }
+  
+  #ajouterActivite {
+  
+    background: #007bff;
+  
+    color: white;
+  
+    border: none;
+  
+    cursor: pointer;
+  
+  }
+  
+  #ajouterActivite:hover {
+  
+    background: #0056b3;
+  
+  }
+  
+  #semaine {
+    display: flex;
+    flex-direction: column; /* empile header puis columns */
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+   }
+
+  .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    padding: 0 10px;
+   }
+  
+   .colonne {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    width: 160px;
+    flex-shrink: 0;
+    margin: 5px;
+   }
+  
+  .colonne h3 {
+  
+    text-align: center;
+  
+    border-bottom: 1px solid #ddd;
+  
+    padding-bottom: 5px;
+  
+    margin-bottom: 10px;
+  
+  }
+  
+  .postit {
+  
+    position: relative;
+  
+    color: white;
+  
+    font-weight: bold;
+  
+    border-radius: 5px;
+  
+    padding: 8px;
+  
+    margin: 5px 0;
+  
+    cursor: grab;
+  
+  }
+  
+  .postit .delete-btn {
+  
+    position: absolute;
+  
+    top: 2px;
+  
+    right: 4px;
+  
+    background: rgba(255,255,255,0.8);
+  
+    color: black;
+  
+    border: none;
+  
+    border-radius: 50%;
+  
+    font-size: 12px;
+  
+    cursor: pointer;
+  
+    width: 18px;
+  
+    height: 18px;
+  
+    line-height: 14px;
+  
+    text-align: center;
+  
+    padding: 0;
+  
+  }
+  
+  .postit .delete-btn:hover {
+  
+    background: white;
+  
+    color: red;
+  
+  }
+  
+  button {
+  
+    cursor: pointer;
+  
+  }
+   
