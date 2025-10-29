@@ -1,171 +1,350 @@
+/* ----- Style général ----- */
+
 body {
 
-    font-family: Arial, sans-serif;
-    
-    margin: 0;
-  
-    padding: 20px;
-  
-    background: #f4f4f4;
-  
-    text-align: center;
-  
-  }
-  
-  h1 {
-  
-    margin-bottom: 15px;
-  
-  }
-  
-  #controls {
-  
-    display: flex;
-  
-    justify-content: center;
-  
-    align-items: center;
-  
-    gap: 10px;
-  
-    margin-bottom: 15px;
+  margin: 0;
 
-    padding-top: 50px;
-  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  background-color: #f6f6f6;
+
+  color: #222;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  height: 100vh;
+
+  overflow-x: hidden;
+
+}
+
+/* ----- Barre du haut (fixe, flottante avec blur) ----- */
+
+header {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  backdrop-filter: blur(15px);
+
+  -webkit-backdrop-filter: blur(15px);
+
+  background-color: rgba(255, 255, 255, 0.7);
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  padding: 12px;
+
+  z-index: 1000;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+
+}
+
+header h1 {
+
+  font-size: 1.5em;
+
+  margin: 0;
+
+  text-align: center;
+
+  color: #000;
+
+  font-weight: 700;
+
+}
+
+header .week-nav {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 90%;
+
+  max-width: 400px;
+
+  margin-top: 8px;
+
+  font-weight: 600;
+
+  color: #222;
+
+}
+
+header .week-nav button {
+
+  background: none;
+
+  border: none;
+
+  font-size: 1.6em;
+
+  cursor: pointer;
+
+  color: #007aff;
+
+  transition: transform 0.1s ease;
+
+}
+
+header .week-nav button:active {
+
+  transform: scale(0.9);
+
+}
+
+/* ----- Contenu principal ----- */
+
+main {
+
+  margin-top: 120px; /* Espace sous la barre du haut */
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding: 0 10px 60px 10px;
+
+  box-sizing: border-box;
+
+}
+
+/* ----- Zone de contrôle ----- */
+
+#controls {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 15px;
+
+}
+
+#controls select,
+
+#controls button {
+
+  font-size: 1em;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  border: 1px solid #ccc;
+
+  background-color: #fff;
+
+}
+
+#controls button {
+
+  background-color: #007aff;
+
+  color: white;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  box-shadow: 0 2px 4px rgba(0,122,255,0.3);
+
+  transition: all 0.15s ease;
+
+}
+
+#controls button:active {
+
+  transform: scale(0.96);
+
+  background-color: #0062d6;
+
+}
+
+/* ----- Grille des jours ----- */
+
+.columns {
+
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 6px;
+
+  width: 100%;
+
+  max-width: 700px;
+
+  box-sizing: border-box;
+
+}
+
+.colonne {
+
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  padding: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  min-height: 90px;
+
+  position: relative;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+}
+
+.colonne:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+.colonne h3 {
+
+  margin: 4px 0;
+
+  font-size: 0.85em;
+
+  font-weight: 600;
+
+}
+
+/* ----- Post-it activités ----- */
+
+.postit {
+
+  margin-top: 6px;
+
+  padding: 6px;
+
+  border-radius: 6px;
+
+  color: white;
+
+  font-size: 0.8em;
+
+  text-align: center;
+
+  width: 100%;
+
+  position: relative;
+
+  box-sizing: border-box;
+
+}
+
+.postit .delete {
+
+  position: absolute;
+
+  top: -5px;
+
+  right: -5px;
+
+  background: rgba(0,0,0,0.7);
+
+  color: white;
+
+  border-radius: 50%;
+
+  width: 16px;
+
+  height: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 0.8em;
+
+  cursor: pointer;
+
+}
+
+/* ----- Responsive mobile ----- */
+
+@media (max-width: 600px) {
+
+  header h1 {
+
+    font-size: 1.3em;
+
   }
-  
-  #selectActivite, #selectJour, #ajouterActivite {
-  
-    padding: 6px 10px;
-  
-    border-radius: 6px;
-  
-    border: 1px solid #ccc;
-  
-    font-size: 14px;
-  
+
+  main {
+
+    margin-top: 110px;
+
   }
-  
-  #ajouterActivite {
-  
-    background: #007bff;
-  
-    color: white;
-  
-    border: none;
-  
-    cursor: pointer;
-  
-  }
-  
-  #ajouterActivite:hover {
-  
-    background: #0056b3;
-  
-  }
-  
-  #semaine {
-    display: flex;
-    flex-direction: column; /* empile header puis columns */
-    align-items: center;
-    gap: 10px;
-    padding-top: 10px;
-   }
 
   .columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    width: 100%;
-    padding: 0 10px;
-   }
-  
-   .colonne {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    padding: 10px;
-    width: 160px;
-    flex-shrink: 0;
-    margin: 5px;
-   }
-  
-  .colonne h3 {
-  
-    text-align: center;
-  
-    border-bottom: 1px solid #ddd;
-  
-    padding-bottom: 5px;
-  
-    margin-bottom: 10px;
-  
+
+    grid-template-columns: repeat(4, 1fr);
+
   }
-  
-  .postit {
-  
-    position: relative;
-  
-    color: white;
-  
-    font-weight: bold;
-  
-    border-radius: 5px;
-  
-    padding: 8px;
-  
-    margin: 5px 0;
-  
-    cursor: grab;
-  
+
+  .colonne {
+
+    min-height: 85px;
+
   }
-  
-  .postit .delete-btn {
-  
-    position: absolute;
-  
-    top: 2px;
-  
-    right: 4px;
-  
-    background: rgba(255,255,255,0.8);
-  
-    color: black;
-  
-    border: none;
-  
-    border-radius: 50%;
-  
-    font-size: 12px;
-  
-    cursor: pointer;
-  
-    width: 18px;
-  
-    height: 18px;
-  
-    line-height: 14px;
-  
-    text-align: center;
-  
-    padding: 0;
-  
+
+}
+
+@media (max-width: 420px) {
+
+  .columns {
+
+    grid-template-columns: repeat(3, 1fr);
+
   }
-  
-  .postit .delete-btn:hover {
-  
-    background: white;
-  
-    color: red;
-  
-  }
-  
-  button {
-  
-    cursor: pointer;
-  
-  }
-   
+
+}
+ 
