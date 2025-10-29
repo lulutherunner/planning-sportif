@@ -126,10 +126,11 @@ h1 {
 /* Wrapper pour les 7 jours - CSS GRID pour la mosaïque */
 .columns {
   display: grid;
-  grid-template-columns: 1fr; /* 1 colonne par défaut sur mobile */
+  grid-template-columns: 1fr 1fr; /* 2 colonne par défaut sur mobile */
   gap: 12px; /* Espace entre les cartes du jour */
   width: 98%; 
-  max-width: 800px;
+  max-width: 1000px;
+  margin : O auto;
   padding: 0;
 }
 
@@ -219,14 +220,14 @@ h1 {
 /* MEDIA QUERIES pour la grille réactive */
 
 /* Écrans de taille moyenne (ex: iPhone en paysage, petits iPad) */
-@media (min-width: 500px) {
-  .columns {
-      grid-template-columns: 1fr 1fr; /* Deux colonnes */
-      gap: 15px; /* Espace plus grand */
-  }
-  #selectActivite, #selectJour {
-      max-width: none; /* Pas de max-width fixe ici */
-  }
+/*@media (min-width: 500px) {
+/*  .columns {
+/*      grid-template-columns: 1fr 1fr; /* Deux colonnes */
+/*      gap: 15px; /* Espace plus grand */
+/*  }
+/*  #selectActivite, #selectJour {
+/*      max-width: none; /* Pas de max-width fixe ici */
+/*  }
 }
 
 /* Grands écrans (tablettes et bureaux) */
